@@ -2,6 +2,8 @@ import express from 'express';
 
 const app = express();
 
+app.use(express.json());
+
 // Rota: Endereço completo da requisição
 // Recurso: Qual entidade estamos acessando do sistema
 
@@ -48,8 +50,8 @@ app.post('/users', (request, response) => {
   console.log(data);
 
   const user = {
-    name: 'Diego',
-    email: 'diego@rocketseat.com.br'
+    name: data.name,
+    email: data.email,
   };
 
   return response.json(user);
