@@ -11,6 +11,7 @@ app.get('/users', (request, response) => {
     'Diego',
     'Cleiton',
     'Robson',
+    'Daniel',
     'Giovanni'
   ]);
 });
