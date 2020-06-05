@@ -14,16 +14,26 @@ const app = express();
 // GET http://localhost:3333/users - Listar usuários
 // GET http://localhost:3333/users/5 - Buscar dados do usuário com ID 5
 
+const users = [
+  'Diego', // 0
+  'Cleiton', // 1
+  'Robson', // 2
+  'Daniel', // 3
+  'Giovanni' // 4
+];
+
 app.get('/users', (request, response) => {
   console.log('Listagem de usuários');
 
-  return response.json([
-    'Diego',
-    'Cleiton',
-    'Robson',
-    'Daniel',
-    'Giovanni'
-  ]);
+  return response.json(users);
+});
+
+app.get('/users/:id', (request, response) => {
+  const id = Number(request.params.id);
+
+  const user = users[id];
+
+  return response.json(user);
 });
 
 app.post('/users', (request, response) => {
