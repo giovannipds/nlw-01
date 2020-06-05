@@ -15,7 +15,8 @@ const app = express();
 // GET http://localhost:3333/users/5 - Buscar dados do usuário com ID 5
 
 // Request Param: Parâmetros que vem na própria rota que identificam um recurso
-// Query Param:
+// Query Param: Parâmetros que vem na própria rota geralmente opcionais para filtros, paginação
+// Request Body: Parâmetros para criação e atualização de informações
 
 const users = [
   'Diego', // 0
@@ -42,6 +43,10 @@ app.get('/users/:id', (request, response) => {
 });
 
 app.post('/users', (request, response) => {
+  const data = request.body;
+
+  console.log(data);
+
   const user = {
     name: 'Diego',
     email: 'diego@rocketseat.com.br'
