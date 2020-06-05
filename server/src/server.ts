@@ -26,11 +26,11 @@ const users = [
 ];
 
 app.get('/users', (request, response) => {
-  const search = request.query.search;
+  const search = String(request.query.search);
 
-  console.log(search);
+  const filteredUsers = search ? users.filter(user => user.includes(search)) : users;
 
-  return response.json(users);
+  return response.json(filteredUsers);
 });
 
 app.get('/users/:id', (request, response) => {
