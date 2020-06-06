@@ -9,3 +9,8 @@ const connection = knex({
 });
 
 export default connection;
+
+// Migrations = Histórico do banco de dados
+
+// create table points
+// create table users
