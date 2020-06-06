@@ -20,6 +20,9 @@ app.use(express.json());
 // Query Param: Parâmetros que vem na própria rota geralmente opcionais para filtros, paginação
 // Request Body: Parâmetros para criação e atualização de informações
 
+// SELECT * FROM users WHERE name = 'Diego'
+// knex('users).where('name', 'Diego').select('*')
+
 const users = [
   'Diego', // 0
   'Cleiton', // 1
