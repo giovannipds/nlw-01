@@ -9,7 +9,7 @@ routes.get('/items', async (request, response) => {
   const serializedItems = items.map(item => {
     return {
       title: item.title,
-      image_url: item.image,
+      image_url: `http://localhost:3333/uploads/${item.image}`,
     };
   });
 
