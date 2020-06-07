@@ -13,6 +13,3 @@ routes.get('/items', itemsController.index);
 routes.post('/points', pointsController.create);
 
 export default routes;
-
-// Service Pattern
-// Repository Pattern (Data Mapper )
