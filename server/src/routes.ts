@@ -7,7 +7,10 @@ routes.get('/items', async (request, response) => {
   const items = await knex('items').select('*');
 
   const serializedItems = items.map(item => {
-    return 1;
+    return {
+      title: item.title,
+      image_url: item.image,
+    };
   });
 
   return response.json(serializedItems);
