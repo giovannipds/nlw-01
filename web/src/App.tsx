@@ -9,7 +9,15 @@ function App() {
   return (
     <div>
       <Header />
-      
+      <Header />
+      <Header />
+      <Header />
+      <Header />
+      <Header />
+      <Header />
+      <Header />
+      <Header />
+
       <h1>Conteúdo da aplicação</h1>
     </div>
   );
