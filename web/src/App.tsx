@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 // JSX: Sintaxe de XML dentro do JavaScript
@@ -6,11 +6,10 @@ import './App.css';
 import Header from './Header';
 
 function App() {
-  let counter = 1;
+  const [counter, setCounter] = useState(0);
 
   function handleButtonClick() {
-    counter++;
-    console.log(counter);
+    setCounter(counter + 1);
   }
 
   return (
