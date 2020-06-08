@@ -17,6 +17,7 @@ function App() {
       <Header title="Hello World" />
 
       <h1>{counter}</h1>
+      <h1>{counter * 2}</h1>
       <button type="button" onClick={handleButtonClick}>Aumentar</button>
     </div>
   );
