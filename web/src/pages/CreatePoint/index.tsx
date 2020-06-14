@@ -23,6 +23,7 @@ interface IBGEUFResponse {
 
 const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
+  const [ufs, setUfs] = useState<string[]>([]);
   
   useEffect(() => {
     api.get('items').then(response => {
@@ -34,7 +35,7 @@ const CreatePoint = () => {
     axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
       const ufInitials = response.data.map(uf => uf.sigla);
 
-      console.log(ufInitials);
+      setUfs(ufInitials);
     })
   }, []);
 
@@ -106,6 +107,9 @@ const CreatePoint = () => {
               <label htmlFor="uf">Estado (UF)</label>
               <select name="uf" id="uf">
                 <option value="0">Selecione uma UF</option>
+                {ufs.map(uf => (
+                  <option key={uf} value={uf}>{uf}</option>
+                ))}
               </select>
             </div>
             <div className="field">
