@@ -41,8 +41,8 @@ const CreatePoint = () => {
   }, []);
 
   useEffect(() => {
-    // carregar as cidades sempre que a UF mudar
-  }, []);
+    console.log('mudou', selectedUf);
+  }, [selectedUf]);
 
   function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
     const uf = event.target.value;
