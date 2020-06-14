@@ -45,7 +45,8 @@ const CreatePoint = () => {
   }, []);
 
   function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
-    console.log(event.target.value);
+    const uf = event.target.value;
+    setSelectedUf(uf);
   }
 
   return (
@@ -114,7 +115,12 @@ const CreatePoint = () => {
           <div className="field-group">
             <div className="field">
               <label htmlFor="uf">Estado (UF)</label>
-              <select name="uf" id="uf" onChange={handleSelectUf}>
+              <select
+                name="uf"
+                id="uf"
+                value={selectedUf}
+                onChange={handleSelectUf}
+              >
                 <option value="0">Selecione uma UF</option>
                 {ufs.map(uf => (
                   <option key={uf} value={uf}>{uf}</option>
