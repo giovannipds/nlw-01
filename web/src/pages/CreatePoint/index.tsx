@@ -17,6 +17,10 @@ const CreatePoint = () => {
           Voltar para home
         </Link>
       </header>
+
+      <form>
+        <h1>Cadastro do <br /> ponto de coleta</h1>
+      </form>
     </div>
   );
 }
