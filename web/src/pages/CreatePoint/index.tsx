@@ -24,6 +24,7 @@ interface IBGEUFResponse {
 const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<string[]>([]);
+  const [selectedUf, setSelectedUf] = useState('0');
   
   useEffect(() => {
     api.get('items').then(response => {
@@ -38,6 +39,14 @@ const CreatePoint = () => {
       setUfs(ufInitials);
     })
   }, []);
+
+  useEffect(() => {
+    // carregar as cidades sempre que a UF mudar
+  }, []);
+
+  function handleSelectUf() {
+    console.log('teste');
+  }
 
   return (
     <div id="page-create-point">
@@ -105,7 +114,7 @@ const CreatePoint = () => {
           <div className="field-group">
             <div className="field">
               <label htmlFor="uf">Estado (UF)</label>
-              <select name="uf" id="uf">
+              <select name="uf" id="uf" onChange={handleSelectUf}>
                 <option value="0">Selecione uma UF</option>
                 {ufs.map(uf => (
                   <option key={uf} value={uf}>{uf}</option>
