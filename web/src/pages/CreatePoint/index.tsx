@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
@@ -44,8 +44,8 @@ const CreatePoint = () => {
     // carregar as cidades sempre que a UF mudar
   }, []);
 
-  function handleSelectUf() {
-    console.log('teste');
+  function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
+    console.log(event.target.value);
   }
 
   return (
