@@ -88,7 +88,7 @@ const CreatePoint = () => {
               <img src="http://localhost:3333/uploads/oleo.svg" alt="Teste"/>
               <span>Óleo de Cozinha</span>
             </li>
-            <li>
+            <li className="selected">
               <img src="http://localhost:3333/uploads/oleo.svg" alt="Teste"/>
               <span>Óleo de Cozinha</span>
             </li>
