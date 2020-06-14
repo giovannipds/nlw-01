@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import api from '../../services/api';
+import axios from 'axios';
 
 import './styles.css';
 
@@ -22,6 +23,12 @@ const CreatePoint = () => {
   useEffect(() => {
     api.get('items').then(response => {
       setItems(response.data);
+    })
+  }, []);
+
+  useEffect(() => {
+    axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
+      console.log(response.data);
     })
   }, []);
 
