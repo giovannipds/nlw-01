@@ -34,6 +34,25 @@ const CreatePoint = () => {
               id="name"
             />
           </div>
+
+          <div className="field-group">
+            <div className="field">
+              <label htmlFor="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div className="field">
+              <label htmlFor="whatsapp">Whatsapp</label>
+              <input
+                type="text"
+                name="whatsapp"
+                id="whatsapp"
+              />
+            </div>
+          </div>
         </fieldset>
         
         <fieldset>
