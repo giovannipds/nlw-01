@@ -17,6 +17,10 @@ interface Item {
   image_url: string;
 }
 
+interface IBGEUFResponse {
+  sigla: string;
+}
+
 const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
   
@@ -27,8 +31,10 @@ const CreatePoint = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
-      console.log(response.data);
+    axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
+      const ufInitials = response.data.map(uf => uf.sigla);
+
+      console.log(ufInitials);
     })
   }, []);
 
