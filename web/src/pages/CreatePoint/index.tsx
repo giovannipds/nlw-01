@@ -20,6 +20,24 @@ const CreatePoint = () => {
 
       <form>
         <h1>Cadastro do <br /> ponto de coleta</h1>
+        
+        <fieldset>
+          <legend>
+            <h2>Dados</h2>
+          </legend>
+        </fieldset>
+        
+        <fieldset>
+          <legend>
+            <h2>Endereço</h2>
+          </legend>
+        </fieldset>
+        
+        <fieldset>
+          <legend>
+            <h2>Ítens de coleta</h2>
+          </legend>
+        </fieldset>
       </form>
     </div>
   );
