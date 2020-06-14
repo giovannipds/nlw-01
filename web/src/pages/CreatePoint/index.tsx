@@ -25,6 +25,15 @@ const CreatePoint = () => {
           <legend>
             <h2>Dados</h2>
           </legend>
+
+          <div className="field">
+            <label htmlFor="name">Nome da entidade</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+            />
+          </div>
         </fieldset>
         
         <fieldset>
