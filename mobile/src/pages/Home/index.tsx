@@ -18,7 +18,7 @@ const Home = () => {
       <View style={styles.footer}>
         <RectButton style={styles.button} onPress={() => {}}>
           <View style={styles.buttonIcon}>
-            >
+            <Text>></Text>
           </View>
           <Text style={styles.buttonText}>
             Entrar
