@@ -214,7 +214,7 @@ const CreatePoint = () => {
 
           <ul className="items-grid">
             {items.map(item => (
-              <li key={item.id} onClick={handleSelectItem(item.id)}>
+              <li key={item.id} onClick={() => handleSelectItem(item.id)}>
                 <img src={item.image_url} alt={item.title} />
                 <span>{item.title}</span>
               </li>
