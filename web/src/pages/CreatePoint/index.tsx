@@ -92,6 +92,10 @@ const CreatePoint = () => {
     ])
   }
 
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+    console.log(event.target.name, event.target.value);
+  }
+
   return (
     <div id="page-create-point">
       <header>
@@ -117,6 +121,7 @@ const CreatePoint = () => {
               type="text"
               name="name"
               id="name"
+              onChange={handleInputChange}
             />
           </div>
 
@@ -127,6 +132,7 @@ const CreatePoint = () => {
                 type="email"
                 name="email"
                 id="email"
+                onChange={handleInputChange}
               />
             </div>
             <div className="field">
@@ -135,6 +141,7 @@ const CreatePoint = () => {
                 type="text"
                 name="whatsapp"
                 id="whatsapp"
+                onChange={handleInputChange}
               />
             </div>
           </div>
