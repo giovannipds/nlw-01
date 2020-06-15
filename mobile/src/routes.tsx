@@ -15,7 +15,7 @@ const Routes = () => {
       headerMode="none"
       screenOptions={{
         cardStyle: {
-          backgroundColor: '#7159c1'
+          backgroundColor: '#f0f0f5'
         }
       }}
     >
