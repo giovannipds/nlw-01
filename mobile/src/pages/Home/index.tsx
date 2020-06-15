@@ -1,10 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
-
-import logo from '../../assets/logo.png';
+import { View, Image } from 'react-native';
 
 const Home = () => {
-  return <View />;
+  return (
+    <View>
+      <Image source={require('../../assets/logo.png')} />
+    </View>
+  );
 }
 
 export default Home;
