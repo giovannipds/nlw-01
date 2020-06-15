@@ -105,7 +105,7 @@ const CreatePoint = () => {
     setFormData({ ...formData, [name]: value })
   }
 
-  function handleSubmit(event: FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
     const { name, email, whatsapp } = formData;
@@ -125,7 +125,9 @@ const CreatePoint = () => {
       items,
     };
 
-    console.log(data);
+    await api.post('points', data);
+
+    alert('Ponto de coleta criado!');
   }
 
   function handleSelectItem(id: number) {
