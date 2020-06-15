@@ -28,7 +28,11 @@ const Points = () => {
         </View>
       </View>
       <View style={styles.itemsContainer}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingHorizontal: 20 }}
+        >
           <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri width={42} height={42} uri="http://192.168.0.112:3333/uploads/lampadas.svg" />
             <Text style={styles.itemTitle}>Lâmpadas</Text>
