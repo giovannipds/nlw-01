@@ -6,7 +6,7 @@ const Home = () => {
     <ImageBackground
       source={require('../../assets/home-background.png')}
       style={styles.container}
-      resizeMode="contain"
+      imageStyle={{ width: 275, height: 368 }}
     >
       <View style={styles.main}>
         <Image source={require('../../assets/logo.png')} />
