@@ -100,8 +100,12 @@ const CreatePoint = () => {
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
-    
+
     setFormData({ ...formData, [name]: value })
+  }
+
+  function handleSelectItem() {
+    console.log('teste');
   }
 
   return (
@@ -210,7 +214,7 @@ const CreatePoint = () => {
 
           <ul className="items-grid">
             {items.map(item => (
-              <li key={item.id}>
+              <li key={item.id} onClick={handleSelectItem}>
                 <img src={item.image_url} alt={item.title} />
                 <span>{item.title}</span>
               </li>
