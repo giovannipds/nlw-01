@@ -32,6 +32,7 @@ const CreatePoint = () => {
   const [cities, setCities] = useState<string[]>([]);
   const [selectedUf, setSelectedUf] = useState('0');
   const [selectedCity, setSelectedCity] = useState('0');
+  const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
   
   useEffect(() => {
     api.get('items').then(response => {
@@ -74,7 +75,10 @@ const CreatePoint = () => {
   }
 
   function handleMapClick(event: LeafletMouseEvent) {
-    console.log(event.latlng);
+    setSelectedPosition([
+      event.latlng.lat,
+      event.latlng.lng,
+    ])
   }
 
   return (
@@ -137,7 +141,7 @@ const CreatePoint = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <Marker position={[-29.1703857, -51.5255223]} />
+            <Marker position={selectedPosition} />
           </Map>
 
           <div className="field-group">
