@@ -3,6 +3,7 @@ import Constants from 'expo-constants';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import MapView from 'react-native-maps';
 
 const Points = () => {
   const navigation = useNavigation();
@@ -19,6 +20,10 @@ const Points = () => {
 
       <Text style={styles.title}>Bem vindo.</Text>
       <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
+
+      <View style={styles.mapContainer}>
+        <MapView style={styles.map} />
+      </View>
     </View>
   );
 }
