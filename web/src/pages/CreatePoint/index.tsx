@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent } from 'react';
+import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
@@ -105,8 +105,8 @@ const CreatePoint = () => {
     setFormData({ ...formData, [name]: value })
   }
 
-  function handleSubmit() {
-    console.log('ahsuiehausie');
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
   }
 
   function handleSelectItem(id: number) {
