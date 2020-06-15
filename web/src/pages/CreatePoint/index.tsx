@@ -30,10 +30,19 @@ const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
+
+  const [InitialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
+
   const [selectedUf, setSelectedUf] = useState('0');
   const [selectedCity, setSelectedCity] = useState('0');
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
   
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log(position);
+    });
+  }, []);
+
   useEffect(() => {
     api.get('items').then(response => {
       setItems(response.data);
