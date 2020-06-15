@@ -106,7 +106,7 @@ const CreatePoint = () => {
   }
 
   function handleSelectItem(id: number) {
-    setSelectedItems([id]);
+    setSelectedItems([ ...selectedItems, id]);
   }
 
   return (
