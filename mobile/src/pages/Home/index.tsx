@@ -3,7 +3,11 @@ import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
 
 const Home = () => {
   return (
-    <ImageBackground source={require('../../assets/home-background.png')} style={styles.container}>
+    <ImageBackground
+      source={require('../../assets/home-background.png')}
+      style={styles.container}
+      resizeMode="contain"
+    >
       <View style={styles.main}>
         <Image source={require('../../assets/logo.png')} />
         <Text style={styles.title}>Seu marketplace de coleta de resíduos</Text>
