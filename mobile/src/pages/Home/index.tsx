@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
 
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <ImageBackground source={require('../../assets/home-background.png')} style={styles.container}>
       <View style={styles.main}>
         <Image source={require('../../assets/logo.png')} />
         <Text style={styles.title}>Seu marketplace de coleta de resíduos</Text>
@@ -11,7 +11,7 @@ const Home = () => {
       </View>
 
       
-    </View>
+    </ImageBackground>
   );
 }
 
