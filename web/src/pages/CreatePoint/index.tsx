@@ -105,12 +105,16 @@ const CreatePoint = () => {
     setFormData({ ...formData, [name]: value })
   }
 
+  function handleSubmit() {
+    console.log('ahsuiehausie');
+  }
+
   function handleSelectItem(id: number) {
     const alreadySelected = selectedItems.findIndex(item => item === id);
 
     if (alreadySelected >= 0) {
       const filteredItems = selectedItems.filter(item => item !== id);
-      
+
       setSelectedItems(filteredItems);
     } else {
       setSelectedItems([ ...selectedItems, id ]);
@@ -128,7 +132,7 @@ const CreatePoint = () => {
         </Link>
       </header>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Cadastro do <br /> ponto de coleta</h1>
         
         <fieldset>
