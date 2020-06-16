@@ -1,5 +1,6 @@
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
+import { FiUpload } from 'react-icons/fi';
 
 import './styles.css';
 
@@ -14,7 +15,10 @@ const Dropzone = () => {
   return (
     <div className="dropzone" {...getRootProps()}>
       <input {...getInputProps()} />
-      <p>Imagem do estabelecimento</p>
+      <p>
+        <FiUpload />
+        Imagem do estabelecimento
+      </p>
     </div>
   )
 }
