@@ -5,12 +5,16 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { Platform, View, StyleSheet, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
+interface Params {
+  point_id: number;
+}
+
 const Detail = () => {
   const navigation = useNavigation();
   const route = useRoute();
 
-  console.log(route.params);
-  
+  const routeParams = route.params as Params;
+
   function handleNavigateBack() {
     navigation.goBack();
   }
