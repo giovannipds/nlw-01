@@ -34,6 +34,8 @@ const Points = () => {
 
       const { latitude, longitude } = location.coords;
 
+      console.log(latitude, longitude);
+
       setInitialPosition([
         latitude,
         longitude
