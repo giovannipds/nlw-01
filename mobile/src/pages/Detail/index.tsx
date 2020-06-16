@@ -1,7 +1,8 @@
 import React from 'react';
+import Constants from 'expo-constants';
 import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
-import { View, StyleSheet, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Platform, View, StyleSheet, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
 const Detail = () => {
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 32,
-    paddingTop: 20,
+    paddingTop: 20 + (Platform.OS === 'ios' ? 0 : Constants.statusBarHeight),
   },
 
   pointImage: {
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: '#999',
     paddingVertical: 20,
-    paddingBottom: 0,
+    paddingBottom: Platform.OS === 'ios' ? 0 : 20,
     paddingHorizontal: 32,
     flexDirection: 'row',
     justifyContent: 'space-between'
