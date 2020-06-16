@@ -2,9 +2,11 @@ import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
-import api from '../../services/api';
-import { LeafletMouseEvent } from 'leaflet';
 import axios from 'axios';
+import { LeafletMouseEvent } from 'leaflet';
+import api from '../../services/api';
+
+import Dropzone from '../../components/Dropzone';
 
 import './styles.css';
 
@@ -160,6 +162,8 @@ const CreatePoint = () => {
       <form onSubmit={handleSubmit}>
         <h1>Cadastro do <br /> ponto de coleta</h1>
         
+        <Dropzone />
+
         <fieldset>
           <legend>
             <h2>Dados</h2>
