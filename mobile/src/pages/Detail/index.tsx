@@ -5,6 +5,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { Platform, View, StyleSheet, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import api from '../../services/api';
+import * as MailComposer from 'expo-mail-composer';
 
 interface Params {
   point_id: number;
@@ -34,6 +35,13 @@ const Detail = () => {
 
   function handleNavigateBack() {
     navigation.goBack();
+  }
+
+  function handleComposeMail() {
+    MailComposer.composeAsync({
+      subject: 'Interesse na coleta de resíduos',
+      recipients: [data.point.email],
+    })
   }
 
   useEffect(() => {
@@ -71,7 +79,7 @@ const Detail = () => {
           <Text style={styles.buttonText}>Whatsapp</Text>
         </RectButton>
 
-        <RectButton style={styles.button} onPress={() => {}}>
+        <RectButton style={styles.button} onPress={handleComposeMail}>
           <Icon name="mail" size={20} color="#FFF" />
           <Text style={styles.buttonText}>E-mail</Text>
         </RectButton>
@@ -131,7 +139,7 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: '#999',
     paddingVertical: 20,
-    paddingBottom: Platform.OS === 'ios' ? 0 : 20,
+    paddingBottom: 20,
     paddingHorizontal: 32,
     flexDirection: 'row',
     justifyContent: 'space-between'
