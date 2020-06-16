@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 
 const Detail = () => {
@@ -16,6 +16,8 @@ const Detail = () => {
       <TouchableOpacity onPress={handleNavigateBack}>
         <Icon name="arrow-left" size={20} color="#34cb79" />
       </TouchableOpacity>
+
+      <Image style={styles.pointImage} source={{ uri: 'https://images.unsplash.com/photo-1556767576-5ec41e3239ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60' }} />
     </View>
   );
 }
