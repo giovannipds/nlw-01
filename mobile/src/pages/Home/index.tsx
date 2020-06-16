@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
-import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
+import { View, ImageBackground, Text, Image, StyleSheet, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -24,6 +24,14 @@ const Home = () => {
       </View>
 
       <View style={styles.footer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite a UF"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Digite a cidade"
+        />
         <RectButton style={styles.button} onPress={handleNavigateToPoint}>
           <View style={styles.buttonIcon}>
             <Text>
