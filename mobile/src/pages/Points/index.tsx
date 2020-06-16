@@ -91,7 +91,7 @@ const Points = () => {
               key={String(item.id)}
               style={[
                 styles.item,
-                styles.selectedItem
+                selectedItems.includes(item.id) ? styles.selectedItem : {}
               ]}
               onPress={() => handleSelectItem(item.id)}
               activeOpacity={0.6}
