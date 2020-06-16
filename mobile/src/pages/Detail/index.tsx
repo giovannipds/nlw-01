@@ -21,6 +21,11 @@ const Detail = () => {
 
       <Text style={styles.pointName}>Mercadão do João</Text>
       <Text style={styles.pointItems}>Lâmpadas, Óleo de Cozinha</Text>
+
+      <View style={styles.address}>
+        <Text style={styles.addressTitle}>Endereço</Text>
+        <Text style={styles.addressContent}>Rio do Sul, SC</Text>
+      </View>
     </View>
   );
 }
